@@ -1,0 +1,142 @@
+# Software Requirements Specification (SRS)
+
+## 1. Introduction
+
+### 1.1 Purpose
+The purpose of this document is to define the software requirements for a mobile application that connects to smart meters and IoT sensors to monitor household energy consumption in real time. This document outlines the functional and non-functional requirements of the system to be developed. The application will allow users to view their energy usage trends, receive alerts for high consumption, compare usage with neighbors, and get suggestions for reducing their energy consumption. This document is intended for use by the development team, project managers, testers, and clients.
+
+### 1.2 Scope
+The product to be developed is a mobile application that helps users monitor their household energy consumption by connecting to smart meters and other IoT sensors in their homes. The application will provide real-time data, historical usage trends, alerts for high consumption, comparison with anonymized data from similar households, and suggestions for reducing energy consumption. The application will also include features such as energy-saving challenges and links to government incentives.
+
+### 1.3 Intended Audience
+This document is intended for the following stakeholders:
+
+- Development Team: To understand the requirements and develop the application accordingly.
+- Project Managers: To track progress and ensure requirements are met.
+- Testers: To validate that the application meets the specified requirements.
+- Clients and Stakeholders: To understand what the application will do and provide feedback.
+
+### 1.4 References
+- ECO FRIENDLY HOME ENERGY MONITOR.pdf
+
+## 2. Overall Description
+
+### 2.1 Product Perspective
+The mobile application will be a standalone product that interacts with external systems such as smart meters, IoT sensors, and possibly online services for data benchmarking and incentive information. The system will be user-centric, providing a user-friendly interface and promoting energy awareness and conservation.
+
+### 2.2 Product Functions
+The application will have the following key functions:
+
+- Connect to smart meters and IoT sensors to collect real-time energy consumption data.
+- Display real-time usage data to the user.
+- Display usage trends over time (daily, weekly, monthly).
+- Allow users to set alerts for abnormal consumption.
+- Provide comparisons with anonymized data from similar households.
+- Offer tailored suggestions for reducing energy consumption.
+- Allow users to participate in energy-saving challenges.
+- Provide links to government incentives and programs.
+
+### 2.3 User Characteristics
+The typical user of the application is a homeowner or resident interested in monitoring and reducing their household energy consumption. Users may have varying levels of technical expertise, so the application should be intuitive and easy to use.
+
+### 2.4 General Constraints
+- The application must be compatible with both iOS and Android platforms.
+- The application must securely communicate with smart meters and IoT sensors.
+- The application must maintain low battery consumption.
+- The application must anonymize user data for comparison purposes.
+
+### 2.5 Assumptions and Dependencies
+- Users have smart meters and IoT sensors installed in their homes.
+- Users have a stable internet connection.
+- Smart meter and IoT sensor data is accessible via appropriate APIs.
+- Data sharing is supported by energy providers.
+- APIs for energy challenges and government incentives are available.
+
+## 3. Specific Requirements
+
+### 3.1 Functional Requirements
+
+#### FR01: Real-time Consumption Monitoring
+- UR1: As a user, I want to view my current energy consumption in real-time.
+  - SR1.1: The app must establish a secure connection with the smart meter.
+  - SR1.2: The app must process and display the data in a user-friendly format.
+  - SR1.3: The data must be refreshed at regular intervals (e.g., every few seconds or minutes).
+
+#### FR02: Usage Trend Analysis
+- UR2: As a user, I want to see trends in my energy usage over time (daily, weekly, monthly).
+  - SR2.1: The app must store historical consumption data securely.
+  - SR2.2: The app must allow users to select a timeframe.
+  - SR2.3: The app must display graphs or charts to show usage trends.
+
+#### FR03: Consumption Alerts
+- UR3: As a user, I want to receive alerts if my consumption exceeds a certain threshold or shows unusual spikes.
+  - SR3.1: The app must allow users to set threshold values.
+  - SR3.2: The app must monitor consumption and compare it to thresholds.
+  - SR3.3: The app must notify the user when thresholds are exceeded.
+  - SR3.4: The app must allow users to customize the type and frequency of alerts.
+
+#### FR04: Neighbor Comparison
+- UR4: As a user, I want to compare my consumption with similar households to see how I perform.
+  - SR4.1: The app must collect anonymized data from users who opt-in.
+  - SR4.2: The app must aggregate data to provide benchmarks (e.g., average usage for similar households in the area).
+  - SR4.3: The app must display comparison data in a secure and anonymized manner.
+  - SR4.4: The app must allow users to opt-in or opt-out of this feature.
+
+#### FR05: Tailored Suggestions
+- UR5: As a user, I want to receive tailored suggestions to reduce my energy consumption.
+  - SR5.1: The app must analyze consumption data to identify patterns or inefficiencies.
+  - SR5.2: The app must generate personalized suggestions based on the analysis.
+  - SR5.3: The app must display these suggestions in a clear and actionable format.
+
+#### FR06: Energy-Saving Challenges
+- UR6: As a user, I want to participate in energy-saving challenges to motivate me to reduce consumption.
+  - SR6.1: The app must present available challenges and allow users to join.
+  - SR6.2: The app must track user progress and provide feedback.
+  - SR6.3 (Optional): The app may include leaderboards or rewards for participants.
+
+#### FR07: Government Incentives
+- UR7: As a user, I want to access information about government programs and incentives for saving energy.
+  - SR7.1: The app must list relevant incentives and programs.
+  - SR7.2: The app must include descriptions and links to external resources.
+  - SR7.3 (Optional): The app may provide a way to filter or search for incentives by location or household type.
+
+### 3.2 Non-Functional Requirements
+
+#### 3.2.1 Performance
+- The app must load real-time data within 3 seconds.
+- The app must load usage trend graphs within 5 seconds.
+- The app must be responsive and provide a fluid user experience.
+
+#### 3.2.2 Security
+- The app must use secure authentication methods.
+- The app must encrypt all communication between the app and external devices.
+- The app must anonymize user data for comparison features.
+
+#### 3.2.3 Usability
+- The app must have a clean and intuitive user interface.
+- The app must allow users to easily navigate and configure settings.
+- The app must be accessible to users with limited technical knowledge.
+
+#### 3.2.4 Reliability
+- The app must function reliably under normal usage conditions.
+- The app must handle errors gracefully (e.g., missing data, sensor disconnection).
+- The app must store and retrieve historical data without corruption.
+
+### 3.3 Interface Requirements
+
+#### 3.3.1 User Interface
+- The app must provide interfaces for:
+  - Real-time monitoring
+  - Trend visualization
+  - Alert configuration
+  - Neighbor comparison
+  - Suggestion viewing
+  - Challenge participation
+  - Incentive browsing
+
+#### 3.3.2 External Interfaces
+- Smart Meter Interface: May vary based on the manufacturer or API.
+- IoT Sensor Interface (Optional): May use Wi-Fi, Bluetooth, Zigbee, etc.
+- Government Incentive Interface: May use APIs or links to web resources.
+- Comparison Data Backend: May require a secure backend service to aggregate and anonymize data.
+
