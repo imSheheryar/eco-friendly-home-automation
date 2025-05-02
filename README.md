@@ -1,6 +1,6 @@
 # Eco-Friendly Home Automation System
 
-![Project Banner](screenShots/1.png)
+![Project Banner](screenShots/ss2.jpg)
 
 ## Overview
 The Eco-Friendly Home Automation System is an innovative solution designed to monitor and optimize energy consumption in residential spaces. This system provides real-time monitoring, automated control of appliances, and intelligent energy management to promote sustainable living.
